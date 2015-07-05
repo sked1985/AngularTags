@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<!-- BEGIN HTML -->
+<html lang="en" ng-app="tagsApp">
+<!-- BEGIN HEADER -->
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="app.js"></script>
+	<title>AngularJS Tag Input</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<!-- END HEADER -->
+<body data-ng-controller="tagsController">
+
+	<div class="tag-input-ctn">
+		<div data-ng-repeat="(key, tag) in inputTags" class="input-tag">
+			{{ tag.name }}
+			<div class="delete-tag" data-ng-click="deleteTag(key)">&times;</div>
+		</div>
+
+		<input type="text" data-tag-input="" data-ng-model="tagText" data-ng-style="{width: inputWidth}" data-new-tag="addTag()" data-delete-tag="deleteTag()">
+
+	</div>
+
+
+
+
+</body>
+</html>
+<!-- END HTML -->
